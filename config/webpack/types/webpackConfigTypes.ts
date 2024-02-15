@@ -1,6 +1,6 @@
-export type webpackBuildModes = 'development' | 'production';
+export type WebpackBuildModes = 'development' | 'production';
 
-export interface webpackPathes {
+export interface WebpackPathes {
   html: string,
   src: string,
   public: string,
@@ -8,8 +8,14 @@ export interface webpackPathes {
   output: string,
 }
 
-export interface webpackBuildOptions {
-  mode: webpackBuildModes,
-  paths: webpackPathes,
-  isDev: boolean
+export interface WebpackBuildOptions {
+  mode: WebpackBuildModes,
+  paths: WebpackPathes,
+  isDev: boolean,
+  port: number
+}
+
+export interface WebpackBuildEnv {
+  mode: WebpackBuildModes,
+  port: number
 }
