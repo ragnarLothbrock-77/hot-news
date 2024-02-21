@@ -15,7 +15,8 @@ export function buildWebpackConfig(options: WebpackBuildOptions): webpack.Config
     output: {
       filename: '[name][contenthash].js',
       path: paths.output,
-      clean: true
+      clean: true,
+      assetModuleFilename: 'images/[hash][ext][query]',
     },
     plugins: buildPlugins(options),
     module: {

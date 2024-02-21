@@ -1,7 +1,12 @@
 .app.dark-mode {
-  --bg-color: #1C404C;
-  --inverted-bg-color: #F4D9AE;
+  --main-bg-color: #212631;
+  --secondary-bg-color: #0A0E15;
 
-  --primary-text-color: #FBFBFB;
-  --inverted-text-color: #1B1B1B;
+  --main-accent-color: #BEEFE8;
+  --second-accent-color: #8EB2EB;
+  --third-accent-color: #DCB6F7;
+  --error-color: #E9A5AD;
+
+  --primary-text-color: #FFFFFA;
+  --inverted-text-color: #0A0E15;
 }

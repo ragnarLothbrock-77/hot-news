@@ -2,13 +2,24 @@
 @import './variables/global.scss';
 @import './themes/dark.theme.scss';
 @import './themes/light.theme.scss';
+@import './fonts/fonts.scss';
 
 
 .app {
-  font: var(--font-m);
+  font: var(--font-l);
 
-  background: var(--bg-color);
+  background: var(--main-bg-color);
   color: var(--primary-text-color);
   transition: all 0.5s ease-out;
   min-height: 100lvh;
+}
+
+.content-page {
+  display: flex;
+  width: 100%;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 50px 30px;
 }

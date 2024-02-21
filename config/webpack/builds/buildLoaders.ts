@@ -27,9 +27,64 @@ export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
     ],
   }
 
+  const svgrLoader = {
+    test: /\.svg$/i,
+    use: [
+      {
+        loader: '@svgr/webpack',
+        options: {
+          icon: true,
+          svgoConfig: {
+            plugins: [
+              {
+                name: 'convertColors',
+                params: {
+                  currentColor: true
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    issuer: /\.[jt]sx?$/,
+    resourceQuery: { not: [/url/] }
+  }
+
+  // const svgInlineLoader = {
+  //   test: /\.svg$/i,
+  //   type: 'asset',
+  //   resourceQuery: /url/, // import svg inline: *.svg?url 
+  // }
+
+
+  const fileLoader = {
+    test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+    type: 'asset/resource',
+  }
+
+  const fontsLoader = {
+    test: /\.(woff(2)?|eot|ttf|otf)$/,
+    type: 'asset/inline'
+  }
+
+  // Depricated !
+  // const fileLoader = {
+  //   test: /\.(png|jpe?g|gif|woff2|woff|ttf|)$/i,
+  //   use: [
+  //     {
+  //       loader: 'file-loader',
+  //     },
+  //   ],
+  // }
+
 
   return [
     tsLoader,
-    scssLoader
+    scssLoader,
+    svgrLoader,
+    // svgInlineLoader,
+    fileLoader,
+    fontsLoader
   ]
 }

@@ -1,7 +1,12 @@
 .app.light-mode {
-  --bg-color: #F4D9AE;
-  --inverted-bg-color: #1C404C;
+  --main-bg-color: #C5C5CB;
+  --secondary-bg-color: #B2B1B1;
 
-  --primary-text-color: #1B1B1B;
-  --inverted-text-color: #FBFBFB;
+  --main-accent-color: #242824;
+  --second-accent-color: #6126F5;
+  --third-accent-color: #C086EA;
+  --error-color: #D1757E;
+
+  --primary-text-color: #0A0E15;
+  --inverted-text-color: #FFFFFA;
 }

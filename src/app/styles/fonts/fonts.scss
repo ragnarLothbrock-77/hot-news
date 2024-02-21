@@ -1,0 +1,38 @@
+/*  Fonts */
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('shared/assets/fonts/Gotham/bold/GothamPro-Bold.eot');
+  src: local('Gotham Pro Bold'), local('GothamPro-Bold'),
+    url('shared/assets/fonts/Gotham/bold/GothamPro-Bold.eot?#iefix') format('embedded-opentype'),
+    url('shared/assets/fonts/Gotham/bold/GothamPro-Bold.woff2') format('woff2'),
+    url('shared/assets/fonts/Gotham/bold/GothamPro-Bold.woff') format('woff'),
+    url('shared/assets/fonts/Gotham/bold/GothamPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('shared/assets/fonts/Gotham/light/GothamPro-Light.eot');
+  src: local('Gotham Pro Light'), local('GothamPro-Light'),
+    url('shared/assets/fonts/Gotham/light/GothamPro-Light.eot?#iefix') format('embedded-opentype'),
+    url('shared/assets/fonts/Gotham/light/GothamPro-Light.woff2') format('woff2'),
+    url('shared/assets/fonts/Gotham/light/GothamPro-Light.woff') format('woff'),
+    url('shared/assets/fonts/Gotham/light/GothamPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('shared/assets/fonts/Gotham/regullar/GothamPro.eot');
+  src: local('Gotham Pro'), local('GothamPro'),
+    url('shared/assets/fonts/Gotham/regullar/GothamPro.eot?#iefix') format('embedded-opentype'),
+    url('shared/assets/fonts/Gotham/regullar/GothamPro.woff2') format('woff2'),
+    url('shared/assets/fonts/Gotham/regullar/GothamPro.woff') format('woff'),
+    url('shared/assets/fonts/Gotham/regullar/GothamPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -3,15 +3,19 @@ import './styles/index.scss';
 import { cn } from 'shared/lib/classNames/classNames';
 import { useAppTheme } from 'app/providers/ThemeProvider';
 import { Nabvar } from '../widgets/Navbar/ui/Nabvar';
+import { Sidebar } from 'widgets/Sidebar';
 
 export const App = () => {
-  const { theme, toggleTheme } = useAppTheme();
+  const { theme } = useAppTheme();
 
   return (
-    <div className={cn('app', { 'hovered': false }, [theme])}>
+    <div className={cn('app', {}, [theme])}>
       <Nabvar />
-      <button onClick={toggleTheme}>Toggle Theme</button>
-      <Outlet />
+      <div className="content-page">
+        <Sidebar />
+        <div className='page-wrapper'>Main Page</div>
+        <Outlet />
+      </div>
     </div>
   )
 }
