@@ -10,6 +10,17 @@ export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
     exclude: /node_modules/,
   }
 
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  }
+
   const scssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -51,11 +62,11 @@ export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
     resourceQuery: { not: [/url/] }
   }
 
-  // const svgInlineLoader = {
-  //   test: /\.svg$/i,
-  //   type: 'asset',
-  //   resourceQuery: /url/, // import svg inline: *.svg?url 
-  // }
+  const svgInlineLoader = {
+    test: /\.svg$/i,
+    type: 'asset',
+    resourceQuery: /url/, // import svg inline: *.svg?url 
+  }
 
 
   const fileLoader = {
@@ -80,10 +91,11 @@ export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
 
 
   return [
+    babelLoader,
     tsLoader,
     scssLoader,
     svgrLoader,
-    // svgInlineLoader,
+    svgInlineLoader,
     fileLoader,
     fontsLoader
   ]
