@@ -4,6 +4,7 @@ import classes from './Sidebar.module.scss';
 import { useState, type PropsWithChildren } from 'react';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
 
 interface SidebarProps {
   className?: string;
@@ -28,7 +29,7 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
 
       <div className={classes.switchers}>
         <ThemeSwitcher />
-        {/* <LangSwitcher /> */}
+        <LangSwitcher className={classes.language} />
       </div>
     </div>
   );
