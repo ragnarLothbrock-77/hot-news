@@ -1,20 +1,19 @@
-import type { RuleSetRule } from "webpack";
+import type { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { WebpackBuildOptions } from "../types/webpackConfigTypes";
-
+import { WebpackBuildOptions } from '../types/webpackConfigTypes';
 
 export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
   const tsLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
-    exclude: /node_modules/,
+    exclude: /node_modules/
   }
 
   const babelLoader = {
     test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
+      loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env']
       }
@@ -26,16 +25,16 @@ export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
-        loader: "css-loader",
+        loader: 'css-loader',
         options: {
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes('.module.')),
             localIdentName: isDev ? '[path].[name]__[local]' : '[hash:base64:5]'
-          },
-        },
+          }
+        }
       },
-      "sass-loader"
-    ],
+      'sass-loader'
+    ]
   }
 
   const svgrLoader = {
@@ -65,13 +64,12 @@ export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
   const svgInlineLoader = {
     test: /\.svg$/i,
     type: 'asset',
-    resourceQuery: /url/, // import svg inline: *.svg?url 
+    resourceQuery: /url/ // import svg inline: *.svg?url
   }
-
 
   const fileLoader = {
     test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-    type: 'asset/resource',
+    type: 'asset/resource'
   }
 
   const fontsLoader = {
@@ -88,7 +86,6 @@ export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
   //     },
   //   ],
   // }
-
 
   return [
     babelLoader,

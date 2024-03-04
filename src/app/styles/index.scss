@@ -1,13 +1,12 @@
-@import './reset/reset.scss';
-@import './variables/global.scss';
-@import './themes/dark.theme.scss';
-@import './themes/light.theme.scss';
-@import './fonts/fonts.scss';
+@import './reset/reset';
+@import './variables/global';
+@import './themes/dark.theme';
+@import './themes/light.theme';
+@import './fonts/fonts';
 
 
 .app {
   font: var(--font-l);
-
   background: var(--main-bg-color);
   color: var(--primary-text-color);
   transition: all 0.5s ease-out;

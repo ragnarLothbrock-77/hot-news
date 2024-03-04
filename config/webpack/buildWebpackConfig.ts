@@ -5,18 +5,17 @@ import { buildLoaders } from './builds/buildLoaders';
 import { buildResolver } from './builds/buildResolver';
 import { buildDevServer } from './builds/buildDevServer';
 
-
 export function buildWebpackConfig(options: WebpackBuildOptions): webpack.Configuration {
   const { mode, paths, isDev } = options;
 
   return {
-    mode: mode,
+    mode,
     entry: paths.entry,
     output: {
       filename: '[name][contenthash].js',
       path: paths.output,
       clean: true,
-      assetModuleFilename: 'images/[hash][ext][query]',
+      assetModuleFilename: 'images/[hash][ext][query]'
     },
     plugins: buildPlugins(options),
     module: {
@@ -24,6 +23,6 @@ export function buildWebpackConfig(options: WebpackBuildOptions): webpack.Config
     },
     resolve: buildResolver(options),
     devServer: isDev ? buildDevServer(options) : undefined,
-    devtool: isDev ? 'inline-source-map' : undefined,
+    devtool: isDev ? 'inline-source-map' : undefined
   }
 }

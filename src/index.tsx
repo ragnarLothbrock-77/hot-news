@@ -9,10 +9,9 @@ import 'shared/config/i18n/i18n.config';
 
 const root = createRoot(document.getElementById('root'));
 
-
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Suspense fallback="Loading..."><App /></Suspense>,
     children: [
       {
@@ -22,7 +21,6 @@ const router = createBrowserRouter([
     ]
   }
 ]);
-
 
 root.render(
   <React.StrictMode>

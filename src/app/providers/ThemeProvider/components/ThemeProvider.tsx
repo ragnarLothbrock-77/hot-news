@@ -1,13 +1,11 @@
 import { useMemo, useState, FC, ReactNode } from 'react';
 import { APP_THEME_LOCAL_STORAGE_KEY, AppTheme, ThemeContext } from './ThemeContext';
 
-
 const appDefaultThemeValue = localStorage.getItem(APP_THEME_LOCAL_STORAGE_KEY) as AppTheme || AppTheme.LIGHT;
 
-type ProviderProps = {
+interface ProviderProps {
   children: ReactNode
-};
-
+}
 
 export const AppThemeProvider: FC<ProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<AppTheme>(appDefaultThemeValue);
@@ -16,7 +14,6 @@ export const AppThemeProvider: FC<ProviderProps> = ({ children }) => {
     theme,
     setTheme
   }), [theme]);
-
 
   return (
     <ThemeContext.Provider value={appThemeDefaultProps}>

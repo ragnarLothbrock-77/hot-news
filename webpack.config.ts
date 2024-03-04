@@ -3,7 +3,6 @@ import webpack from 'webpack';
 import { buildWebpackConfig } from './config/webpack/buildWebpackConfig';
 import type { WebpackBuildEnv, WebpackPathes } from './config/webpack/types/webpackConfigTypes';
 
-
 export default (env: WebpackBuildEnv) => {
   const paths: WebpackPathes = {
     html: path.resolve(__dirname, 'public', 'index.html'),
@@ -24,4 +23,4 @@ export default (env: WebpackBuildEnv) => {
   });
 
   return config;
-} 
+}
