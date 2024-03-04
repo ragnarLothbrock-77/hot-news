@@ -6,17 +6,32 @@ import { About } from './pages/About';
 import { AppThemeProvider } from 'app/providers/ThemeProvider';
 
 import 'shared/config/i18n/i18n.config';
+import { NotFound } from 'pages/NotFound';
+import { PageLoader } from 'widgets/PageLoader/ui/PageLoader';
+import { MainPage } from 'pages/Main';
 
 const root = createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Suspense fallback="Loading..."><App /></Suspense>,
+    element: <App />,
     children: [
       {
+        index: true,
+        element: <Suspense fallback={<PageLoader />}>
+          <MainPage />
+        </Suspense>
+      },
+      {
         path: '/about',
-        element: <Suspense fallback="Loading..."><About /></Suspense>
+        element: <Suspense fallback={<PageLoader />}>
+          <About />
+        </Suspense>
+      },
+      {
+        path: '*',
+        element: <NotFound />
       }
     ]
   }

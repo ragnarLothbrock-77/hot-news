@@ -4,11 +4,9 @@ import { cn } from 'shared/lib/classNames/classNames';
 import { useAppTheme } from 'app/providers/ThemeProvider';
 import { Nabvar } from '../widgets/Navbar/ui/Nabvar';
 import { Sidebar } from 'widgets/Sidebar';
-import { useTranslation } from 'react-i18next';
 
 export const App = () => {
   const { theme } = useAppTheme();
-  const { t } = useTranslation('main')
 
   return (
     <div className={cn('app', {}, [theme])}>
@@ -16,10 +14,9 @@ export const App = () => {
       <div className="content-page">
         <Sidebar />
         <div className='page-wrapper'>
-          {t('Main')}
-
+          <Outlet />
         </div>
-        <Outlet />
+
       </div>
     </div>
   )
