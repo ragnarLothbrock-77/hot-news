@@ -77,16 +77,6 @@ export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
     type: 'asset/inline'
   }
 
-  // Depricated !
-  // const fileLoader = {
-  //   test: /\.(png|jpe?g|gif|woff2|woff|ttf|)$/i,
-  //   use: [
-  //     {
-  //       loader: 'file-loader',
-  //     },
-  //   ],
-  // }
-
   return [
     babelLoader,
     tsLoader,

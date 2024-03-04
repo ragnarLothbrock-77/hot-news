@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    jest: true
   },
   extends: [
     'plugin:react/recommended',
@@ -59,7 +60,8 @@ module.exports = {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/naming-convention': 'warn',
     'react/jsx-props-no-spreading': 'warn',
-    'react/no-children-prop': 'warn'
+    'react/no-children-prop': 'warn',
+    'max-len': ['error', { 'code': 100, 'ignoreComments': true }]
   },
   settings: {
     react: {
