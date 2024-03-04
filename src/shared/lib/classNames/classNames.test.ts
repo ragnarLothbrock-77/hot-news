@@ -7,7 +7,11 @@ describe('classNames', () => {
 
   test('with additional classes from array', () => {
     const expected = 'someClass class1 class2';
-    expect(cn('someClass', {}, ['class1', 'class2'])).toBe(expected);
+    expect(cn(
+      'someClass',
+      {},
+      ['class1', 'class2']))
+      .toBe(expected);
   })
 
   test('with mods classes', () => {
