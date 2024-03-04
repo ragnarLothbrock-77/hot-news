@@ -22,7 +22,7 @@
   position: relative;
 }
 
-.switcherBody:before {
+.switcherBody::before {
   position: absolute;
   top: 50%;
   left: 0;

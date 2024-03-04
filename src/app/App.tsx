@@ -6,10 +6,9 @@ import { Nabvar } from '../widgets/Navbar/ui/Nabvar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useTranslation } from 'react-i18next';
 
-
 export const App = () => {
   const { theme } = useAppTheme();
-  const { t, i18n } = useTranslation('main')
+  const { t } = useTranslation('main')
 
   return (
     <div className={cn('app', {}, [theme])}>
@@ -17,7 +16,8 @@ export const App = () => {
       <div className="content-page">
         <Sidebar />
         <div className='page-wrapper'>
-          {t('Text')}
+          {t('Root')}
+
         </div>
         <Outlet />
       </div>

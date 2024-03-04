@@ -19,4 +19,3 @@ export interface WebpackBuildEnv {
   mode: WebpackBuildModes,
   port: number
 }
-

@@ -4,7 +4,7 @@ import classes from './Sidebar.module.scss';
 import { useState, type PropsWithChildren } from 'react';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { LangSwitcher } from 'widgets/LangSwitcher/ui/LangSwitcher';
+import { LangSwitcher } from 'widgets/LangSwitcher';
 
 interface SidebarProps {
   className?: string;
@@ -23,9 +23,9 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
     <div className={cn(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}>
       <Button
         onClick={onToggle}
-        variant={ButtonVariant.CLEAR}
-        children={'Toggle'}
-      />
+        variant={ButtonVariant.CLEAR}>
+        {'Toggle'}
+      </Button>
 
       <div className={classes.switchers}>
         <ThemeSwitcher />

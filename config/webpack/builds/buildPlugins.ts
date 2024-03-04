@@ -1,8 +1,7 @@
-import webpack, { DefinePlugin } from 'webpack';
+import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type { WebpackBuildOptions } from '../types/webpackConfigTypes';
-
 
 export function buildPlugins({ paths, isDev }: WebpackBuildOptions): webpack.WebpackPluginInstance[] {
   return [
@@ -16,6 +15,6 @@ export function buildPlugins({ paths, isDev }: WebpackBuildOptions): webpack.Web
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev)
-    }),
+    })
   ]
 }
