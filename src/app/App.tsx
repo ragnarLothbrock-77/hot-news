@@ -16,7 +16,7 @@ export const App = () => {
       <div className="content-page">
         <Sidebar />
         <div className='page-wrapper'>
-          {t('Root')}
+          {t('Main')}
 
         </div>
         <Outlet />
