@@ -3,6 +3,7 @@ import classes from './MainPage.module.scss';
 
 import type { PropsWithChildren } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ErrorHandleButton } from 'app/providers/ErrorBoundary/ui/ErrorHandleButton';
 
 interface MainPageProps {
   className?: string;
@@ -14,7 +15,8 @@ const MainPage = (props: PropsWithChildren<MainPageProps>) => {
 
   return (
     <div className={cn(classes.mainPage, {}, [className])}>
-      {t('Main Page')}
+      <ErrorHandleButton />
+      <span>{t('Main Page')}</span>
     </div>
   );
 }

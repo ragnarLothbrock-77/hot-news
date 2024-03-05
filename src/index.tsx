@@ -9,13 +9,14 @@ import 'shared/config/i18n/i18n.config';
 import { NotFound } from 'pages/NotFound';
 import { PageLoader } from 'widgets/PageLoader/ui/PageLoader';
 import { MainPage } from 'pages/Main';
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 
 const root = createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <ErrorBoundary><App /></ErrorBoundary>,
     children: [
       {
         index: true,
