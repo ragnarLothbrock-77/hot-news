@@ -20,8 +20,12 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
   }
 
   return (
-    <div className={cn(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}>
+    <div
+      className={cn(classes.sidebar, { [classes.collapsed]: collapsed }, [className])}
+      data-testid='sidebar'
+    >
       <Button
+        data-testid='sidebar-toggle'
         onClick={onToggle}
         variant={ButtonVariant.CLEAR}>
         {'Toggle'}

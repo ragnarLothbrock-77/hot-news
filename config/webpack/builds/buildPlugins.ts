@@ -2,9 +2,10 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import type { WebpackBuildOptions } from '../types/webpackConfigTypes';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 export function buildPlugins(
-  { paths, isDev }: WebpackBuildOptions
+  { paths, isDev, analyze }: WebpackBuildOptions
 ): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
@@ -17,6 +18,9 @@ export function buildPlugins(
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev)
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: analyze ? 'server' : 'disabled'
     })
   ]
 }

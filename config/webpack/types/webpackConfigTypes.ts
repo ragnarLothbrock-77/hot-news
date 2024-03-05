@@ -12,10 +12,12 @@ export interface WebpackBuildOptions {
   mode: WebpackBuildModes,
   paths: WebpackPathes,
   isDev: boolean,
-  port: number
+  port: number,
+  analyze: boolean
 }
 
 export interface WebpackBuildEnv {
   mode: WebpackBuildModes,
-  port: number
+  port: number,
+  analyze: boolean
 }

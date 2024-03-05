@@ -16,6 +16,9 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "sourceMap": true,
+    "types": [
+      "@testing-library/jest-dom"
+    ],
   },
   "ts-node": {
     "compilerOptions": {

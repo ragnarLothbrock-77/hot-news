@@ -61,7 +61,14 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'warn',
     'react/jsx-props-no-spreading': 'warn',
     'react/no-children-prop': 'warn',
-    'max-len': ['error', { 'code': 100, 'ignoreComments': true }]
+    'max-len': ['error', { 'code': 100, 'ignoreComments': true }],
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markUpOnly: true,
+        ignoreAttribute: ['data-testid', 'to']
+      }
+    ]
   },
   settings: {
     react: {
@@ -70,5 +77,13 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true
-  }
+  },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off'
+      }
+    }
+  ]
 }
