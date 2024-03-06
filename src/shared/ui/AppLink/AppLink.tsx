@@ -6,7 +6,7 @@ import { Link, LinkProps } from 'react-router-dom';
 
 export const enum AppLinkVariant {
   PRIMARY = 'primary',
-  INVERTED = 'inverted',
+  ACCENTED = 'accented',
   RED = 'red'
 }
 

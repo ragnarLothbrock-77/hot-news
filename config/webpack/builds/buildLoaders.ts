@@ -1,6 +1,7 @@
 import type { RuleSetRule } from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { WebpackBuildOptions } from '../types/webpackConfigTypes';
+import { cssLoader } from '../loaders/cssLoader';
+import { svgrLoader } from '../loaders/svgrLoader';
 
 export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
   const tsLoader = {
@@ -20,47 +21,9 @@ export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
     }
   }
 
-  const scssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-            localIdentName: isDev ? '[path].[name]__[local]' : '[hash:base64:5]',
-            exportLocalsConvention: 'camelCase'
-          }
-        }
-      },
-      'sass-loader'
-    ]
-  }
+  const scssLoader = cssLoader(isDev);
 
-  const svgrLoader = {
-    test: /\.svg$/i,
-    use: [
-      {
-        loader: '@svgr/webpack',
-        options: {
-          icon: true,
-          svgoConfig: {
-            plugins: [
-              {
-                name: 'convertColors',
-                params: {
-                  currentColor: true
-                }
-              }
-            ]
-          }
-        }
-      }
-    ],
-    issuer: /\.[jt]sx?$/,
-    resourceQuery: { not: [/url/] }
-  }
+  const svgLoader = svgrLoader();
 
   const svgInlineLoader = {
     test: /\.svg$/i,
@@ -82,7 +45,7 @@ export function buildLoaders({ isDev }: WebpackBuildOptions): RuleSetRule[] {
     babelLoader,
     tsLoader,
     scssLoader,
-    svgrLoader,
+    svgLoader,
     svgInlineLoader,
     fileLoader,
     fontsLoader

@@ -5,6 +5,7 @@ import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
 export const enum ButtonVariant {
   CLEAR = 'clear',
+  OUTLINED = 'outline'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
