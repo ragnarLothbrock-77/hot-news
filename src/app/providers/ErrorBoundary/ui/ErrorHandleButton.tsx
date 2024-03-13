@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 
 export const ErrorHandleButton = () => {
@@ -15,7 +15,7 @@ export const ErrorHandleButton = () => {
   }, [error])
 
   return (
-    <Button onClick={handleError}>
+    <Button variant={ButtonVariant.REGULLAR} isRegullarActive onClick={handleError}>
       {t('Throw synthetic error')}
     </Button>
   );

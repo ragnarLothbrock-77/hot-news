@@ -1,10 +1,24 @@
 :root {
-  --main-bg-color: #C5C5CB;
-  --secondary-bg-color: #B2B1B1;
-  --main-accent-color: #242824;
-  --second-accent-color: #6126F5;
-  --third-accent-color: #C086EA;
+  // Main
+  --main-bg-color: #DCE2E8;
+  --main-accent-color: #E79B9D;;
   --error-color: #D1757E;
-  --primary-text-color: #0A0E15;
+  --primary-text-color: #334669;
   --inverted-text-color: #FFFFFA;
+
+  // Widgets
+  --widget-bg: #E4F0FA;
+  --widget-border: none;
+  --widget-popup-bg: var(--widget-bg);
+  --widget-popup-border: 2px solid #FEFEFE;
+  --widget-shadow: 15px 15px 30px rgb(170 187 201 / 40%);
+
+  // Buttons
+  --button-bg: #e6eef8;
+  --button-border: 2px solid rgb(151 151 151 / 10%);
+  --button-shadow: 2px 9px 30px #aabbc9, -8px 5px 12px #f4f8fb, -13px -7px 15px #f6fbff, -7px -7px 12px #fff;
+
+  // Icons
+  --main-icon-color: #9BB9D3;
+  --second-icon-color: #C8D6E5;
 }

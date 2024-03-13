@@ -1,20 +1,61 @@
 .button {
   cursor: pointer;
-}
-
-.clear {
-  padding: 0;
+  color: var(--primary-text-color);
   outline: none;
-  background: none;
-  border: none;
-  color: var(--primary-text-color);
+  padding: 0;
+
+  &:hover {
+    transition: all .2s ease-in-out;
+    box-shadow: var(--button-presed-shadow);
+  }
 }
 
+.regullar {
+  min-width: 250px;
+  max-width: 325px;
+  height: 60px;
+  border-radius: 20px;
+  background-color: var(--button-bg);
+  border: var(--button-border);
+  box-shadow: var(--button-shadow);
+  text-align: center;
+}
 
-.outline {
-  padding: 15px 25px;
-  background: none;
-  border: 2px solid var(--main-accent-color);
-  color: var(--primary-text-color);
-  border-radius: 15px;
+.isActive {
+  background-color: var(--main-accent-color);
+  box-shadow: none;
+}
+
+.pannel {
+  width: 64px;
+  height: 32px;
+  border-radius: 20px;
+  background-color: var(--button-bg);
+  border: var(--button-border);
+  box-shadow: var(--button-shadow);
+}
+
+.round {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--button-bg);
+  border: var(--button-border);
+  box-shadow: var(--button-shadow); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  background-color: var(--button-bg);
+  border-radius: var(--main-border-radius);
+  border: var(--button-border);
+  box-shadow: var(--button-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }

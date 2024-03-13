@@ -1,10 +1,28 @@
 .dark-mode {
-  --main-bg-color: #212631;
-  --secondary-bg-color: #0A0E15;
-  --main-accent-color: #BEEFE8;
-  --second-accent-color: #8EB2EB;
-  --third-accent-color: #DCB6F7;
+  // Main
+  --main-bg-color: #1C1F22;
+  --main-accent-color: #854FC8;
   --error-color: #E9A5AD;
-  --primary-text-color: #FFFFFA;
+  --primary-text-color: #FDFDFD;
   --inverted-text-color: #0A0E15;
+
+  // Widgets
+  --widget-bg:linear-gradient(180deg, rgba(37.54 43.04 44.06) 0%, rgba(52.73 54.98 59.47) 100%);
+  --widget-border: 2px solid #26282E;
+  --widget-shadow: none;
+  --widget-popup-bg:  linear-gradient(180deg, rgba(56 59 66) 0%, rgba(61 64.53 71.6) 100%);;
+  --widget-popup-border: 2px solid #393D46;
+  --widget-popup-shadow: 3.89px 3.89px 16.67px #1e2327;;
+  --widget-inner-popup-bg: linear-gradient(180deg, rgba(45.9 49.3 56.1) 0%, rgba(61 64.53 71.6) 100%);
+  --widget-inner-popup-shadow: 3.89px 3.89px 16.67px #1e2327;
+
+  // Buttons
+  --button-bg: inear-gradient(180deg, rgba(44 48 54) 0%, rgba(48.59 51.86 59.5) 100%);;
+  --button-border: 2px solid rgba(44 48 54 / 10%);
+  --button-shadow: -3.89px -3.89px 10px #474d52, 3.89px 3.89px 10px #1e2327;
+  --button-presed-shadow: -3px -3px 6px #474d5233, 3px 3px 4px #1e23274c;
+
+  // Icons
+  --main-icon-color: #7F8489;
+  --second-icon-color: #262b2d;
 }

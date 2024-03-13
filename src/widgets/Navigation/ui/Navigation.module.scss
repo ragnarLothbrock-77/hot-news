@@ -1,0 +1,47 @@
+.nav {
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  gap: 20px;
+  width: 100%;
+  transition: all .3s ease;
+}
+
+.link-shrink {
+  transition: all .3s ease;
+  gap: 0;
+  justify-content: center;
+}
+
+.link-icon-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 25px;
+}
+
+.link-icon {
+  fill: var(--main-icon-color);
+}
+
+.link-text {
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
+}
+
+.collapsed {
+  opacity: 0;
+  width: 0;
+}
+

@@ -5,6 +5,9 @@ import { useState, type PropsWithChildren } from 'react';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
+import ArrowLeft from 'shared/assets/icons/arrow-left.svg';
+import ArrowRight from 'shared/assets/icons/arrow-right.svg';
+import { Navigation } from 'widgets/Navigation';
 
 interface SidebarProps {
   className?: string;
@@ -25,15 +28,22 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
       data-testid='sidebar'
     >
       <Button
+        className={classes.collapsedControl}
         data-testid='sidebar-toggle'
         onClick={onToggle}
-        variant={ButtonVariant.CLEAR}>
-        {'Toggle'}
+        variant={ButtonVariant.ROUND}
+      >
+        {collapsed
+          ? <ArrowRight />
+          : <ArrowLeft />
+        }
       </Button>
-
+      <div className={classes.sidebarNav}>
+        <Navigation collapsed={collapsed} />
+      </div>
       <div className={classes.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher className={classes.language} />
+        <ThemeSwitcher className={classes.themes} />
+        <LangSwitcher collapsed={collapsed} acronym={collapsed} className={classes.language} />
       </div>
     </div>
   );

@@ -27,15 +27,19 @@ jobs:
         run: npm ci
 
       - name: linting ts
+        if: always()
         run: npm run lint:ts
 
       - name: linting css
+        if: always()
         run: npm run lint:css
 
       - name: unit testing
+        if: always()
         run: npm run test:unit
         
       - name: build production
+        if: always()
         run: npm run build:prod
 
       - name: Publish to Chromatic

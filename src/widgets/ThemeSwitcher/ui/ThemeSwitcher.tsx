@@ -16,19 +16,17 @@ export const ThemeSwitcher = (props: PropsWithChildren<ThemeSwitcherProps>) => {
   const { theme, toggleTheme } = useAppTheme();
 
   return (
-    <div className={cn(classes.wrapper)}>
-      <SunIcon width={'22px'} height={'22px'} />
-      <div className={cn(classes.switcherBody, {}, [classes[theme]])}>
-        <Button
-          variant={ButtonVariant.CLEAR}
-          className={cn(classes.switcher, {}, [className])}
-          onClick={toggleTheme}
-          area-label="Toggle theme"
-        >
-        </Button>
-      </div>
-      <MoonIcon width={'18px'} height={'18px'} />
-    </div>
+    <div className={cn(classes.wrapper, {}, [className])}>
+      <SunIcon />
+      <Button
+        variant={ButtonVariant.PANNEL}
+        className={cn(classes.switcher, {}, [className, classes[theme]])}
+        onClick={toggleTheme}
+        area-label="Toggle theme"
+      >
+      </Button>
+      <MoonIcon />
+    </div >
 
   );
 }

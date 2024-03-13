@@ -6,11 +6,18 @@
   --font-size-l: 24px;
   --font-line-l: 32px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
 
 
   // Sizes
-  --navbar-height: 70px;
-  --switcher-width: 45px;
-  --sidebar-width: 300px;
-  --sidebar-collapsed-width: 150px;
+  --navbar-height: 80px;
+  --sidebar-width: 250px;
+  --sidebar-collapsed-width: 100px;
+
+
+  // Design UI
+  --main-border-radius: 20px;
+  --widget-margin: 25px;
 }

@@ -9,7 +9,7 @@ const meta = {
   title: 'shared/Button',
   component: Button,
   tags: ['autodocs'],
-  args: { children: 'TEST' }
+  args: { children: 'T' }
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -17,13 +17,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Clear: Story = {
   args: {
-    variant: ButtonVariant.CLEAR
+    variant: ButtonVariant.REGULLAR
   }
 };
 
 export const ClearDark: Story = {
   args: {
-    variant: ButtonVariant.CLEAR
+    variant: ButtonVariant.REGULLAR
   },
   decorators: [
     (Story) => (
@@ -34,15 +34,53 @@ export const ClearDark: Story = {
   ]
 };
 
-export const Outlined: Story = {
+export const Round: Story = {
   args: {
-    variant: ButtonVariant.OUTLINED
+    variant: ButtonVariant.ROUND
   }
 };
 
-export const OutlinedDark: Story = {
+export const RoundDark: Story = {
   args: {
-    variant: ButtonVariant.OUTLINED
+    variant: ButtonVariant.ROUND
+  },
+  decorators: [
+    (Story) => (
+      <ThemeDecorator theme={AppTheme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    )
+  ]
+};
+
+export const Pannel: Story = {
+  args: {
+    variant: ButtonVariant.PANNEL
+  }
+};
+
+export const PannelDark: Story = {
+  args: {
+    variant: ButtonVariant.PANNEL
+  },
+  decorators: [
+    (Story) => (
+      <ThemeDecorator theme={AppTheme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    )
+  ]
+};
+
+export const Square: Story = {
+  args: {
+    variant: ButtonVariant.SQUARE
+  }
+};
+
+export const SquareDark: Story = {
+  args: {
+    variant: ButtonVariant.SQUARE
   },
   decorators: [
     (Story) => (
