@@ -4,7 +4,7 @@ import { App } from './app/App';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { AboutPage } from './pages/About';
 import { AppThemeProvider } from 'app/providers/ThemeProvider';
-
+import 'app/styles/index.scss';
 import 'shared/config/i18n/i18n.config';
 import { NotFoundPage } from 'pages/NotFound';
 import { PageLoader } from 'widgets/PageLoader/ui/PageLoader';

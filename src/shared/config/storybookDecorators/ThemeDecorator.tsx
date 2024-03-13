@@ -1,4 +1,4 @@
-import { AppTheme } from 'app/providers/ThemeProvider';
+import { AppTheme, AppThemeProvider } from 'app/providers/ThemeProvider';
 import { ReactNode } from 'react';
 
 interface DecoratorProps {
@@ -6,6 +6,12 @@ interface DecoratorProps {
   children: ReactNode
 }
 
-export const ThemeDecorator = ({ theme, children }: DecoratorProps) => (
-  <div className={`app ${theme}`}>{children}</div>
-)
+export const ThemeDecorator = ({ theme, children }: DecoratorProps) => {
+  document.documentElement.dataset.theme = theme;
+
+  return (
+    <AppThemeProvider initialTheme={theme}>
+      <div className={`app ${theme}`}>{children}</div>
+    </AppThemeProvider>
+  )
+}

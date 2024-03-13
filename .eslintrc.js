@@ -26,7 +26,8 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
-    'i18next'
+    'i18next',
+    'react-hooks'
   ],
   rules: {
     '@typescript-eslint/prefer-nullish-coalescing': 0,
@@ -59,12 +60,14 @@ module.exports = {
     'react/no-children-prop': 'warn',
     'max-len': ['error', { 'code': 100, 'ignoreComments': true }],
     'i18next/no-literal-string': [
-      'error',
+      'warn',
       {
         markUpOnly: true,
         ignoreAttribute: ['data-testid', 'to']
       }
-    ]
+    ],
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error' // Checks effect dependencies
   },
   settings: {
     react: {

@@ -1,4 +1,4 @@
-.dark-mode {
+:root[data-theme="dark-mode"]{
   // Main
   --main-bg-color: #1C1F22;
   --main-accent-color: #854FC8;
@@ -25,4 +25,7 @@
   // Icons
   --main-icon-color: #7F8489;
   --second-icon-color: #262b2d;
+
+  // Overlay
+  --overlay-color: #000
 }

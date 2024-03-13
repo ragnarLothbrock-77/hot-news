@@ -1,4 +1,4 @@
-:root {
+:root[data-theme="light-mode"] {
   // Main
   --main-bg-color: #DCE2E8;
   --main-accent-color: #E79B9D;;
@@ -21,4 +21,7 @@
   // Icons
   --main-icon-color: #9BB9D3;
   --second-icon-color: #C8D6E5;
+
+  // Overlay
+  --overlay-color: rgba(0 0 0 20%)
 }

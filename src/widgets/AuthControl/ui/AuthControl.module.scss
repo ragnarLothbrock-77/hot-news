@@ -1,0 +1,15 @@
+.auth-control {
+  width: auto;
+  padding-top: 15px;
+}
+
+.auth-control-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.auth-icon {
+  fill: var(--main-icon-color);
+}

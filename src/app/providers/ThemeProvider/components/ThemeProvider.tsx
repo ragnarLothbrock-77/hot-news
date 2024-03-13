@@ -5,11 +5,14 @@ const appDefaultThemeValue = localStorage.getItem(
   APP_THEME_LOCAL_STORAGE_KEY) as AppTheme || AppTheme.LIGHT;
 
 interface ProviderProps {
-  children: ReactNode
+  children: ReactNode;
+  initialTheme?: AppTheme
 }
 
-export const AppThemeProvider: FC<ProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<AppTheme>(appDefaultThemeValue);
+export const AppThemeProvider: FC<ProviderProps> = ({ children, initialTheme }) => {
+  const [theme, setTheme] = useState<AppTheme>(initialTheme || appDefaultThemeValue);
+  const currentTheme = initialTheme ?? appDefaultThemeValue;
+  document.documentElement.dataset.theme = currentTheme;
 
   const appThemeDefaultProps = useMemo(() => ({
     theme,

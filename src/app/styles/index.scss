@@ -7,21 +7,21 @@
 body {
   font: var(--font-m);
   width: 100%;
+  color: var(--primary-text-color);
 }
 
 .app {
+  min-height: 100vh;  
   position: relative;
   background: var(--main-bg-color);
-  color: var(--primary-text-color);
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .content-page {
-  height: 100%;
+  min-height: inherit;
   display: flex;
   width: 100%;
   padding: 30px;
-  min-height: 100vh;
 }
 
 .page-wrapper {
