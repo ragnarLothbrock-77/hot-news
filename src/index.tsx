@@ -10,6 +10,7 @@ import { NotFoundPage } from 'pages/NotFound';
 import { PageLoader } from 'widgets/PageLoader/ui/PageLoader';
 import { MainPage } from 'pages/Main';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
+import { StoreProvider } from 'app/providers/StoreProvider';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -40,8 +41,10 @@ const router = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
-    <AppThemeProvider>
-      <RouterProvider router={router} />
-    </AppThemeProvider>
+    <StoreProvider>
+      <AppThemeProvider>
+        <RouterProvider router={router} />
+      </AppThemeProvider>
+    </StoreProvider>
   </React.StrictMode>
 )

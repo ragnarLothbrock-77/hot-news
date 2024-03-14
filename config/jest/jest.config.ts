@@ -11,6 +11,11 @@ const config: Config = {
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "/private/var/folders/3b/dn1qxz1n7js5sg21bqgz0b280000gn/T/jest_dx",
 
+  // A set of global variables that need to be available in all test environments
+  globals: {
+    __IS_DEV__: true
+  },
+
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
 
@@ -102,9 +107,6 @@ const config: Config = {
 
   // A path to a module which exports an async function that is triggered once after all test suites
   // globalTeardown: undefined,
-
-  // A set of global variables that need to be available in all test environments
-  // globals: {},
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
