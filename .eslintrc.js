@@ -7,7 +7,7 @@ module.exports = {
   extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   overrides: [
     {
-      files: ['global.d.ts'],
+      files: ['global.d.ts', '**/src/**/*.test.{ts,tsx}'],
       rules: {
         'no-undef': 'off'
       }
@@ -77,12 +77,12 @@ module.exports = {
   globals: {
     __IS_DEV__: true
   },
-  overrides: [
-    {
-      files: ['**/src/**/*.test.{ts,tsx}'],
-      rules: {
-        'i18next/no-literal-string': 'off'
-      }
-    }
-  ]
+  // overrides: [
+  //   {
+  //     files: ['**/src/**/*.test.{ts,tsx}'],
+  //     rules: {
+  //       'i18next/no-literal-string': 'off'
+  //     }
+  //   }
+  // ]
 }

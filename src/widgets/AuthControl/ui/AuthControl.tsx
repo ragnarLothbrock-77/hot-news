@@ -3,7 +3,7 @@ import classes from './AuthControl.module.scss';
 
 import { useState, type PropsWithChildren, useCallback } from 'react';
 import SignIn from 'shared/assets/icons/sign-in.svg';
-import { Modal } from 'shared/ui/Modal/Modal';
+import { LoginModal } from 'features/AuthByUsername';
 
 interface AuthControlProps {
   className?: string;
@@ -13,18 +13,21 @@ export const AuthControl = (props: PropsWithChildren<AuthControlProps>) => {
   const { className } = props;
   const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
 
-  const handleToggleModal = useCallback(() => {
-    setIsAuthModal((prev) => !prev);
-    console.log('Click');
+  const handleCloseModal = useCallback(() => {
+    setIsAuthModal(false);
+  }, [])
+
+  const handleOpenModal = useCallback(() => {
+    setIsAuthModal(true);
   }, [])
 
   return (
     <div className={cn(classes.authControl, {}, [className])}>
-      <div className={classes.authControlWrapper} onClick={handleToggleModal}>
+      <div className={classes.authControlWrapper} onClick={handleOpenModal}>
         <span className={classes.authText}>Sign In</span>
         <SignIn className={classes.authIcon} />
       </div>
-      <Modal isOpen={isAuthModal} onClose={handleToggleModal}>Modal</Modal>
+      <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
     </div>
   );
 }

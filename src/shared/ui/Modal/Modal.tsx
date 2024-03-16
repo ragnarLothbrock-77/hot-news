@@ -13,7 +13,7 @@ interface ModalProps {
   className?: string;
   children?: ReactNode;
   isOpen?: boolean;
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 export const Modal = (props: PropsWithChildren<ModalProps>) => {
@@ -49,7 +49,7 @@ export const Modal = (props: PropsWithChildren<ModalProps>) => {
   }
 
   return (
-    <Portal element={document.body}>
+    <Portal>
       <div className={cn(classes.modal, mods, [className])}>
         <div className={classes.overlay} onClick={closeHandler}>
           <div className={classes.content} onClick={propagationHandler}>
