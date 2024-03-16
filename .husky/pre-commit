@@ -1,0 +1,5 @@
+npm run lint:ts
+npm run lint:css
+npm run test:unit
+
+

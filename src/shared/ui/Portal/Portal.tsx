@@ -1,16 +1,20 @@
-import type { ReactNode } from 'react';
+import { useRef, type ReactNode, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 interface PortalProps {
   children?: ReactNode;
-  element: HTMLElement;
 }
 
-export const Portal = (props: PortalProps) => {
-  const {
-    children,
-    element = document.body
-  } = props;
+export const Portal = ({ children }: PortalProps) => {
+  const ref = useRef();
+  const [isMounted, setIsMounted] = useState<boolean>(false);
 
-  return createPortal(children, element);
+  useEffect(() => {
+    console.log('Portal отработал', document.querySelector('#app'));
+    // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
+    ref.current = document.querySelector('#root') || undefined;
+    setIsMounted(true);
+  }, []);
+
+  return isMounted && ref.current ? createPortal(children, ref.current) : null;
 }
