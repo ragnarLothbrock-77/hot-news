@@ -18,13 +18,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const LinkPrimaryLight: Story = {
   args: {
     variant: AppLinkVariant.PRIMARY
   }
 };
 
-export const PrimaryDark: Story = {
+export const LinkPrimaryDark: Story = {
   args: {
     variant: AppLinkVariant.PRIMARY
   },
@@ -37,13 +37,13 @@ export const PrimaryDark: Story = {
   ]
 }
 
-export const Inverted: Story = {
+export const LinkAccentedLight: Story = {
   args: {
     variant: AppLinkVariant.ACCENTED
   }
 };
 
-export const InvertedDark: Story = {
+export const LinkAccentedDark: Story = {
   args: {
     variant: AppLinkVariant.ACCENTED
   },
@@ -56,13 +56,13 @@ export const InvertedDark: Story = {
   ]
 }
 
-export const Red: Story = {
+export const LinkRedLight: Story = {
   args: {
     variant: AppLinkVariant.RED
   }
 };
 
-export const RedDark: Story = {
+export const LinkRedDark: Story = {
   args: {
     variant: AppLinkVariant.RED
   },

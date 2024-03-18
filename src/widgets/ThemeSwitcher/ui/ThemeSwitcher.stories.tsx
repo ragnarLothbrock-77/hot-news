@@ -3,22 +3,22 @@ import 'app/styles/themes/dark.theme.scss';
 import 'app/styles/themes/light.theme.scss';
 import { ThemeDecorator } from 'shared/config/storybookDecorators/ThemeDecorator';
 import { AppTheme } from 'app/providers/ThemeProvider';
-import { PageLoader } from './PageLoader';
+import { ThemeSwitcher } from './ThemeSwitcher';
 
 const meta = {
-  title: 'widgets/PageLoader',
-  component: PageLoader,
+  title: 'widgets/ThemeSwitcher',
+  component: ThemeSwitcher,
   tags: ['autodocs']
-} satisfies Meta<typeof PageLoader>;
+} satisfies Meta<typeof ThemeSwitcher>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LoaderLight: Story = {
+export const ThemeSwitcherLight: Story = {
   args: {}
 };
 
-export const LoaderDark: Story = {
+export const ThemeSwitcherDark: Story = {
   args: {},
   decorators: [
     (Story) => (
@@ -27,4 +27,4 @@ export const LoaderDark: Story = {
       </ThemeDecorator>
     )
   ]
-}
+};

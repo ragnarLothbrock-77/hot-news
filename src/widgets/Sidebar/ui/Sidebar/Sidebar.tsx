@@ -43,7 +43,7 @@ export const Sidebar = (props: PropsWithChildren<SidebarProps>) => {
       </div>
       <div className={classes.switchers}>
         <ThemeSwitcher className={classes.themes} />
-        <LangSwitcher collapsed={collapsed} acronym={collapsed} className={classes.language} />
+        <LangSwitcher collapsed={collapsed} className={classes.language} />
       </div>
     </div>
   );

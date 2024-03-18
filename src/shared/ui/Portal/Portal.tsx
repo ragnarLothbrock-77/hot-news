@@ -10,9 +10,9 @@ export const Portal = ({ children }: PortalProps) => {
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log('Portal отработал', document.querySelector('#app'));
+    console.log('Portal отработал', document.querySelector('.app-wrapper'));
     // eslint-disable-next-line @typescript-eslint/no-confusing-void-expression
-    ref.current = document.querySelector('#root') || undefined;
+    ref.current = document.querySelector('.app') || undefined;
     setIsMounted(true);
   }, []);
 

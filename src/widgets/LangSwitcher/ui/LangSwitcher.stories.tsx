@@ -3,26 +3,45 @@ import 'app/styles/themes/dark.theme.scss';
 import 'app/styles/themes/light.theme.scss';
 import { ThemeDecorator } from 'shared/config/storybookDecorators/ThemeDecorator';
 import { AppTheme } from 'app/providers/ThemeProvider';
-import { Navigation } from './Navigation';
+import { LangSwitcher } from './LangSwitcher';
 
 const meta = {
-  title: 'widgets/Navigation',
-  component: Navigation,
+  title: 'widgets/LangSwitcher',
+  component: LangSwitcher,
   tags: ['autodocs']
-} satisfies Meta<typeof Navigation>;
+} satisfies Meta<typeof LangSwitcher>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NavigationLight: Story = {
+export const LangSwitcherLight: Story = {
   args: {
     collapsed: false
   }
 };
 
-export const NavigationDark: Story = {
+export const LangSwitcherDark: Story = {
   args: {
     collapsed: false
+  },
+  decorators: [
+    (Story) => (
+      <ThemeDecorator theme={AppTheme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    )
+  ]
+};
+
+export const LangSwitcherCollapsedLight: Story = {
+  args: {
+    collapsed: true
+  }
+};
+
+export const LangSwitcherCollapsedDark: Story = {
+  args: {
+    collapsed: true
   },
   decorators: [
     (Story) => (

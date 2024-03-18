@@ -1,6 +1,7 @@
 .lang-switcher {
   position: relative;
   width: 100%;
+  max-width: 250px;
   background: var(--widget-inner-popup-bg);
   box-shadow: var(--widget-inner-popup-shadow);
   border-radius: var(--main-border-radius);

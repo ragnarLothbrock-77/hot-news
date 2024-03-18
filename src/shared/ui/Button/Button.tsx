@@ -4,7 +4,7 @@ import classes from './Button.module.scss';
 import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
 export const enum ButtonVariant {
-  REGULLAR = 'regullar',
+  PRIMARY = 'primary',
   ROUND = 'round',
   PANNEL = 'pannel',
   SQUARE = 'square'
@@ -21,7 +21,7 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
     className,
     children,
     isRegullarActive,
-    variant = ButtonVariant.REGULLAR,
+    variant = ButtonVariant.PRIMARY,
     ...otherProps
   } = props;
 

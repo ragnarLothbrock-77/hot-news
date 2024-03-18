@@ -13,3 +13,9 @@
 .auth-icon {
   fill: var(--main-icon-color);
 }
+
+.active-icon {
+  .auth-icon {
+    fill: var(--main-accent-color);
+  }
+}
