@@ -8,9 +8,13 @@
     transition: all .2s ease-in-out;
     box-shadow: var(--button-presed-shadow);
   }
+
+  &:disabled {
+    opacity: 0.4;
+  }
 }
 
-.regullar {
+.primary {
   min-width: 250px;
   max-width: 325px;
   height: 60px;

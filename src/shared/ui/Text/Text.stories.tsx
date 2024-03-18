@@ -1,29 +1,33 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import 'app/styles/themes/dark.theme.scss';
 import 'app/styles/themes/light.theme.scss';
 import { ThemeDecorator } from 'shared/config/storybookDecorators/ThemeDecorator';
 import { AppTheme } from 'app/providers/ThemeProvider';
+import { Text, TextVariant } from './Text';
 
 const meta = {
-  title: 'shared/Button',
-  component: Button,
+  title: 'shared/Text',
+  component: Text,
   tags: ['autodocs'],
-  args: { children: 'T' }
-} satisfies Meta<typeof Button>;
+  args: { children: 'Text' }
+} satisfies Meta<typeof Text>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ButtonPrimaryLight: Story = {
+export const TextTitleLight: Story = {
   args: {
-    variant: ButtonVariant.PRIMARY
+    variant: TextVariant.PRIMARY,
+    title: 'Title',
+    text: 'Text'
   }
 };
 
-export const ButtonPrimaryDark: Story = {
+export const TextTitleDark: Story = {
   args: {
-    variant: ButtonVariant.PRIMARY
+    variant: TextVariant.PRIMARY,
+    title: 'Title',
+    text: 'Text'
   },
   decorators: [
     (Story) => (
@@ -34,15 +38,17 @@ export const ButtonPrimaryDark: Story = {
   ]
 };
 
-export const ButtonRoundLight: Story = {
+export const OnlyTitleLight: Story = {
   args: {
-    variant: ButtonVariant.ROUND
+    variant: TextVariant.PRIMARY,
+    title: 'Title'
   }
 };
 
-export const ButtonRoundDark: Story = {
+export const OnlyTitleDark: Story = {
   args: {
-    variant: ButtonVariant.ROUND
+    variant: TextVariant.PRIMARY,
+    title: 'Title'
   },
   decorators: [
     (Story) => (
@@ -53,15 +59,38 @@ export const ButtonRoundDark: Story = {
   ]
 };
 
-export const ButtonPannelLight: Story = {
+export const OnlyTextLight: Story = {
   args: {
-    variant: ButtonVariant.PANNEL
+    variant: TextVariant.PRIMARY,
+    text: 'Text'
   }
 };
 
-export const ButtonPannelDark: Story = {
+export const OnlyTextDark: Story = {
   args: {
-    variant: ButtonVariant.PANNEL
+    variant: TextVariant.PRIMARY,
+    text: 'Text'
+  },
+  decorators: [
+    (Story) => (
+      <ThemeDecorator theme={AppTheme.DARK}>
+        <Story />
+      </ThemeDecorator>
+    )
+  ]
+}
+
+export const ErrorTitleLight: Story = {
+  args: {
+    variant: TextVariant.ERROR,
+    title: 'Title'
+  }
+};
+
+export const ErrorTitleDark: Story = {
+  args: {
+    variant: TextVariant.ERROR,
+    title: 'Title'
   },
   decorators: [
     (Story) => (
@@ -72,35 +101,17 @@ export const ButtonPannelDark: Story = {
   ]
 };
 
-export const ButtonSquareLight: Story = {
+export const ErrorTextLight: Story = {
   args: {
-    variant: ButtonVariant.SQUARE
+    variant: TextVariant.ERROR,
+    text: 'Title'
   }
 };
 
-export const ButtonSquareDark: Story = {
+export const ErrorTextDark: Story = {
   args: {
-    variant: ButtonVariant.SQUARE
-  },
-  decorators: [
-    (Story) => (
-      <ThemeDecorator theme={AppTheme.DARK}>
-        <Story />
-      </ThemeDecorator>
-    )
-  ]
-};
-
-export const ButtonPrimaryDisabledLight: Story = {
-  args: {
-    variant: ButtonVariant.PRIMARY,
-    disabled: true
-  }
-};
-
-export const ButtonPrimaryDisabledDark: Story = {
-  args: {
-    variant: ButtonVariant.PRIMARY
+    variant: TextVariant.ERROR,
+    text: 'Title'
   },
   decorators: [
     (Story) => (

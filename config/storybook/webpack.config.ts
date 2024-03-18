@@ -1,6 +1,6 @@
 import path from 'path';
 import { WebpackPathes } from '../webpack/types/webpackConfigTypes';
-import webpack, { RuleSetRule } from 'webpack';
+import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import { cssLoader } from '../webpack/loaders/cssLoader';
 import { svgrLoader } from '../webpack/loaders/svgrLoader';
 
@@ -32,6 +32,10 @@ export default ({ config }: { config: webpack.Configuration }) => {
   })
 
   config.module.rules.push(svgrLoader() as RuleSetRule);
+
+  config.plugins.push(new DefinePlugin({
+    __IS_DEV__: true
+  }));
 
   return config;
 }

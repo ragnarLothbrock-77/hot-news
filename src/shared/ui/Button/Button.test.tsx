@@ -9,8 +9,8 @@ describe('Button', () => {
 
   test('Button themeexist test', async () => {
     // eslint-disable-next-line i18next/no-literal-string
-    render(<Button variant={ButtonVariant.REGULLAR}>Test</Button>);
-    expect(await screen.findByText('Test')).toHaveClass('regullar');
+    render(<Button variant={ButtonVariant.PRIMARY}>Test</Button>);
+    expect(await screen.findByText('Test')).toHaveClass('primary');
     screen.debug();
   })
 });

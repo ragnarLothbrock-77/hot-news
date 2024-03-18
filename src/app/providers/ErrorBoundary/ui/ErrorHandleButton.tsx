@@ -15,7 +15,7 @@ export const ErrorHandleButton = () => {
   }, [error])
 
   return (
-    <Button variant={ButtonVariant.REGULLAR} isRegullarActive onClick={handleError}>
+    <Button variant={ButtonVariant.PRIMARY} isRegullarActive onClick={handleError}>
       {t('Throw synthetic error')}
     </Button>
   );

@@ -2,7 +2,7 @@ import { cn } from 'shared/lib/classNames/classNames';
 import classes from './LangSwitcher.module.scss';
 import { useTranslation } from 'react-i18next';
 
-import { useState, type PropsWithChildren, SyntheticEvent } from 'react';
+import { useState, type PropsWithChildren } from 'react';
 import Language from 'shared/assets/icons/lang.svg';
 import Russia from 'shared/assets/icons/russia.svg';
 import America from 'shared/assets/icons/america.svg'
@@ -13,7 +13,6 @@ import { Line } from 'shared/ui/Line/Line';
 
 interface LangSwitcherProps {
   className?: string;
-  acronym: boolean;
   collapsed: boolean;
 }
 
@@ -22,7 +21,7 @@ export const LangSwitcher = (props: PropsWithChildren<LangSwitcherProps>) => {
   const { t, i18n } = useTranslation();
   const [additionalSettins, setAdditionalSettins] = useState<boolean>(false)
 
-  const toggleLanguage = (e: SyntheticEvent) => {
+  const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
   }
 
