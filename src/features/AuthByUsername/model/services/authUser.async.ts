@@ -1,9 +1,8 @@
-import i18next from 'i18next'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { User, userActions } from 'entities/User';
 
-export interface AuthUser {
+interface AuthUser {
   username: string;
   password: string;
 }
@@ -21,7 +20,7 @@ export const authUser = createAsyncThunk<User, AuthUser, { rejectValue: string }
       thunkAPI.dispatch(userActions.setAuthData(response.data))
       return response.data;
     } catch (e) {
-      return thunkAPI.rejectWithValue(i18next.t('Auth Error Message'))
+      return thunkAPI.rejectWithValue('Auth Error Message')
     }
   }
 )

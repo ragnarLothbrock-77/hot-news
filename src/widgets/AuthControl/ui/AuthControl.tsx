@@ -44,7 +44,6 @@ export const AuthControl = (props: PropsWithChildren<AuthControlProps>) => {
           <span className={classes.authText}>Sign Out</span>
           <Profile className={classes.authIcon} />
         </div>
-        <LoginModal isOpen={false} onClose={handleCloseModal} />
       </div>
     )
   }
@@ -56,6 +55,9 @@ export const AuthControl = (props: PropsWithChildren<AuthControlProps>) => {
         <SignIn className={classes.authIcon} />
       </div>
       <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
+      {/* {
+        isAuthModal && <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
+      } */}
     </div>
   );
 }

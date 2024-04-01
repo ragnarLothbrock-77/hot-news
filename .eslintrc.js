@@ -58,7 +58,7 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'warn',
     'react/jsx-props-no-spreading': 'warn',
     'react/no-children-prop': 'warn',
-    'max-len': ['error', { 'code': 100, 'ignoreComments': true }],
+    'max-len': ['error', { 'code': 120, 'ignoreComments': true }],
     'i18next/no-literal-string': [
       'warn',
       {
