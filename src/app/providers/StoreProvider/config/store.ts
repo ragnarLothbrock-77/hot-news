@@ -13,7 +13,7 @@ export function createReduxStore(initialState?: StateSchema) {
     reducer: rootReducer,
     devTools: __IS_DEV__,
     preloadedState: initialState
-  })
+  });
 }
 
 export type RootState = StateSchema;

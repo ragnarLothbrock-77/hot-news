@@ -7,22 +7,28 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { authActions } from '../../model/slice/authSlice';
-import { getAuthState } from 'features/AuthByUsername/model/selectors/getAuthState/getAuthState';
 import { authUser } from 'features/AuthByUsername/model/services/authUser.async';
 import { useAppDispatch } from 'app/providers/StoreProvider';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
+import { getAuthUsername } from 'features/AuthByUsername/model/selectors/getAuthUsername/getAuthUsername';
+import { getAuthPassword } from 'features/AuthByUsername/model/selectors/getAuthPassword/getAuthPassword';
+import { getAuthLoading } from 'features/AuthByUsername/model/selectors/getAuthLoading/getAuthLoading';
+import { getAuthError } from 'features/AuthByUsername/model/selectors/getAuthError/getAuthError';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string;
   isOpen: boolean;
 }
 
-export const LoginForm = memo(function LoginForm(props: PropsWithChildren<LoginFormProps>) {
+const LoginForm = memo(function LoginForm(props: PropsWithChildren<LoginFormProps>) {
   const { className, isOpen } = props;
   const { t } = useTranslation();
   const usernameInputRef = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
-  const { username, password, error, isLoading } = useSelector(getAuthState)
+  const username = useSelector(getAuthUsername);
+  const password = useSelector(getAuthPassword);
+  const isLoading = useSelector(getAuthLoading);
+  const error = useSelector(getAuthError);
 
   const handleUsernameChange = useCallback((value: string) => {
     dispatch(authActions.setUsername(value));
@@ -72,3 +78,5 @@ export const LoginForm = memo(function LoginForm(props: PropsWithChildren<LoginF
     </div>
   );
 })
+
+export default LoginForm;

@@ -3,7 +3,7 @@ import 'app/styles/themes/dark.theme.scss';
 import 'app/styles/themes/light.theme.scss';
 import { ThemeDecorator } from 'shared/config/storybookDecorators/ThemeDecorator';
 import { AppTheme } from 'app/providers/ThemeProvider';
-import { LoginForm } from './LoginForm';
+import LoginForm from './LoginForm';
 import StoreDecorator from 'shared/config/storybookDecorators/StoreDecorator';
 
 const meta = {
